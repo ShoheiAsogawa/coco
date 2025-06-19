@@ -3,175 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CocoColor & CocoCrew - 子供達の未来を彩る場所</title>
+    <title>CocoColor &amp; CocoCrew</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: #fdf8f3;
-            min-height: 100vh;
+            font-family: 'Noto Sans JP', sans-serif;
+            display: flex;
+            height: 100vh;
+            text-align: center;
+        }
+        .half {
+            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px;
-        }
-
-        .main-title {
-            font-size: 28px;
-            color: #333;
-            text-align: center;
-            margin-bottom: 60px;
-            line-height: 1.6;
-            font-weight: 500;
-        }
-
-        /* 改行を制御 */
-        .break-mobile {
-            display: none;
-        }
-
-        .services-container {
-            display: flex;
-            gap: 100px;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            max-width: 1200px;
-            width: 100%;
-        }
-
-        .service {
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s ease;
             text-decoration: none;
-            color: inherit;
-            display: block;
+            color: #333;
+            background-color: #fdf8f3;
         }
-
-        .service:hover {
-            transform: translateY(-10px);
-        }
-
-        .logo-container {
-            width: 300px;
+        .half.left { border-right: 1px solid #e0e0e0; }
+        .logo {
+            width: 60%;
+            max-width: 300px;
             height: auto;
             margin-bottom: 20px;
         }
-
-        .logo-image {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
+        .tagline {
+            font-size: 20px;
+            margin-bottom: 10px;
         }
-
-        .service-subtitle {
+        .subtitle {
             font-size: 16px;
             color: #666;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
         }
-
-        .service-description {
-            font-size: 15px;
-            color: #333;
-            letter-spacing: 0.5px;
-            max-width: 350px;
-            margin: 0 auto;
-        }
-
-        .footer-text {
-            position: absolute;
-            bottom: 30px;
-            font-size: 13px;
-            color: #999;
-            letter-spacing: 1px;
-        }
-
         @media (max-width: 768px) {
-            .main-title {
-                font-size: 18px;
-                margin-bottom: 40px;
+            body {
+                flex-direction: column;
+                height: auto;
             }
-
-            .break-mobile {
-                display: block;
-            }
-
-            .services-container {
-                gap: 50px;
-            }
-
-            .logo-container {
-                width: 250px;
-            }
-
-            .service-subtitle {
-                font-size: 13px;
-            }
-
-            .service-description {
-                font-size: 12px;
-            }
-
-            .footer-text {
-                font-size: 11px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .main-title {
-                font-size: 16px;
-                margin-bottom: 30px;
-            }
-
-            .logo-container {
-                width: 200px;
-            }
-
-            .service-subtitle {
-                font-size: 12px;
-            }
-
-            .service-description {
-                font-size: 11px;
-            }
-
-            .footer-text {
-                font-size: 10px;
-            }
+            .half.left { border-right: none; border-bottom: 1px solid #e0e0e0; }
+            .half { min-height: 50vh; }
+            .logo { width: 70%; }
         }
     </style>
 </head>
 <body>
-    <h1 class="main-title">子供達の得意を伸ばし、<br class="break-mobile">未来を彩れる場所でありたい。</h1>
-    
-    <div class="services-container">
-        <!-- CocoColor -->
-        <a href="./cococolor.ccc-ivory.com/" class="service">
-            <div class="logo-container">
-                <img src="cococolor.ccc-ivory.com/assets/img/common/logo.png" alt="CocoColor" class="logo-image">
-            </div>
-            <p class="service-subtitle">児童発達支援・放課後等デイサービス</p>
-            <p class="service-description">「音でひらく、はじめての"ここち"」音楽療育のココカラー</p>
-        </a>
-
-        <!-- CocoCrew -->
-        <a href="./cococrew.ccc-ivory.com/" class="service">
-            <div class="logo-container">
-                <img src="cococrew.ccc-ivory.com/assets/img/common/logo.png" alt="CocoCrew" class="logo-image">
-            </div>
-            <p class="service-subtitle">児童発達支援・放課後等デイサービス</p>
-            <p class="service-description">「手を動かせば、想像はカタチになる」創造と工作のココクルー</p>
-        </a>
-    </div>
-
-    <p class="footer-text">ロゴをタップすると公式サイトへ遷移します。</p>
+    <a href="./cococolor.ccc-ivory.com/" class="half left">
+        <img class="logo" src="cococolor.ccc-ivory.com/assets/img/common/logo.png" alt="CocoColor">
+        <p class="tagline">音でひらく、はじめてのここち</p>
+        <p class="subtitle">音楽療育のココカラー</p>
+    </a>
+    <a href="./cococrew.ccc-ivory.com/" class="half right">
+        <img class="logo" src="cococrew.ccc-ivory.com/assets/img/common/logo.png" alt="CocoCrew">
+        <p class="tagline">手を動かせば創造は形になる</p>
+        <p class="subtitle">創造と工作のココクルー</p>
+    </a>
 </body>
 </html>
