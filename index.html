@@ -9,8 +9,32 @@
         body {
             font-family: 'Noto Sans JP', sans-serif;
             display: flex;
-            height: 100vh;
+            flex-direction: column;
+            min-height: 100vh;
             text-align: center;
+            margin: 0;
+        }
+
+        .header {
+            background-color: #fdf8f3;
+            padding: 60px 20px;
+        }
+        .header-title {
+            font-size: 36px;
+            color: #333;
+            font-weight: bold;
+            position: relative;
+            z-index: 10;
+        }
+        .header-sub {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .split {
+            display: flex;
+            flex: 1;
             position: relative;
         }
        
@@ -20,22 +44,29 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            padding: 40px 20px;
             text-decoration: none;
             color: #333;
             background-color: #fdf8f3;
-            transition: transform 0.3s ease;
         }
-        .half.left { border-right: 1px solid #e0e0e0; }
-        .half:hover { transform: translateY(-10px); }
+        .half.left { border-right: none; }
+        .half:hover {
+            background-color: #fdf8f3;
+            transform: none;
+        }
+        .half:hover .logo,
+        .half:hover .tagline { transform: translateY(-10px); }
         .logo {
             width: 60%;
             max-width: 300px;
             height: auto;
             margin-bottom: 20px;
+            transition: transform 0.3s ease;
         }
         .tagline {
             font-size: 20px;
             margin-bottom: 10px;
+            transition: transform 0.3s ease;
         }
         .subtitle {
             font-size: 16px;
@@ -54,15 +85,22 @@
                 flex-direction: column;
                 height: auto;
             }
-            .half.left { border-right: none; border-bottom: 1px solid #e0e0e0; }
-            .half { min-height: 50vh; }
+            .split { flex-direction: column; }
+            .half.left { border-right: none; border-bottom: none; }
+            .half { min-height: 50vh; margin-bottom: 20px; }
+            .half:last-child { margin-bottom: 0; }
             .logo { width: 70%; }
-            .title { font-size: 20px; top: 10px; }
+            .header-title { font-size: 32px; }
             .footer-text { font-size: 11px; bottom: 10px; }
         }
     </style>
 </head>
 <body>
+    <header class="header">
+        <h1 class="header-title">CocoColor &amp; CocoCrew</h1>
+        <p class="header-sub">子供達の得意を伸ばし、未来を彩れる場所でありたい。</p>
+    </header>
+    <div class="split">
     <a href="./cococolor.ccc-ivory.com/" class="half left">
         <img class="logo" src="cococolor.ccc-ivory.com/assets/img/common/logo.png" alt="CocoColor">
         <p class="tagline">音でひらく、はじめてのここち</p>
@@ -73,6 +111,7 @@
         <p class="tagline">手を動かせば創造は形になる</p>
         <p class="subtitle">創造と工作のココクルー</p>
     </a>
+    </div>
     <p class="footer-text">ロゴをタップすると公式サイトへ遷移します。</p>
 </body>
 </html>
