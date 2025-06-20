@@ -16,8 +16,8 @@
         }
 
         .header {
-            background-color: #fff;
-            padding: 70px 20px;
+            background-color: #fdf8f3;
+            padding: 30px 20px;
         }
         .header-title {
             font-size: 36px;
@@ -46,7 +46,7 @@
             color: #333;
             background-color: #fdf8f3;
         }
-        .half.left { border-right: 1px solid #e0e0e0; }
+        .half.left { border-right: none; }
         .half:hover {
             background-color: #fdf8f3;
             transform: none;
@@ -62,7 +62,9 @@
         .tagline {
             font-size: 20px;
             margin-bottom: 10px;
+            transition: transform 0.3s ease;
         }
+        .half:hover .tagline { transform: translateY(-10px); }
         .subtitle {
             font-size: 16px;
             color: #666;
@@ -80,7 +82,7 @@
                 flex-direction: column;
                 height: auto;
             }
-            .half.left { border-right: none; border-bottom: 1px solid #e0e0e0; }
+            .half.left { border-right: none; border-bottom: none; }
             .half { min-height: 50vh; }
             .logo { width: 70%; }
             .header-title { font-size: 32px; }
