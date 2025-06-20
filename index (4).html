@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CocoColor &amp; CocoCrew</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            display: flex;
+            height: 100vh;
+            text-align: center;
+            position: relative;
+        }
+        .title {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 28px;
+            font-weight: 500;
+            color: #333;
+            line-height: 1.4;
+        }
+        .half {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #333;
+            background-color: #fdf8f3;
+            transition: transform 0.3s ease;
+        }
+        .half.left { border-right: 1px solid #e0e0e0; }
+        .half:hover { transform: translateY(-10px); }
+        .logo {
+            width: 60%;
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .tagline {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+        }
+        .footer-text {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            font-size: 13px;
+            color: #999;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                height: auto;
+            }
+            .half.left { border-right: none; border-bottom: 1px solid #e0e0e0; }
+            .half { min-height: 50vh; }
+            .logo { width: 70%; }
+            .title { font-size: 20px; top: 10px; }
+            .footer-text { font-size: 11px; bottom: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">ここから&amp;ここくる、子供たちの未来を彩る場所</h1>
+    <a href="./cococolor.ccc-ivory.com/" class="half left">
+        <img class="logo" src="cococolor.ccc-ivory.com/assets/img/common/logo.png" alt="CocoColor">
+        <p class="tagline">音でひらく、はじめてのここち</p>
+        <p class="subtitle">音楽療育のココカラー</p>
+    </a>
+    <a href="./cococrew.ccc-ivory.com/" class="half right">
+        <img class="logo" src="cococrew.ccc-ivory.com/assets/img/common/logo.png" alt="CocoCrew">
+        <p class="tagline">手を動かせば創造は形になる</p>
+        <p class="subtitle">創造と工作のココクルー</p>
+    </a>
+    <p class="footer-text">ロゴをタップすると公式サイトへ遷移します。</p>
+</body>
+</html>
