@@ -23,15 +23,15 @@
             text-decoration: none;
             color: #333;
             background-color: #fdf8f3;
-            transition: transform 0.3s ease;
         }
         .half.left { border-right: 1px solid #e0e0e0; }
-        .half:hover { transform: translateY(-10px); }
+        .half:hover .logo { transform: translateY(-10px); }
         .logo {
             width: 60%;
             max-width: 300px;
             height: auto;
             margin-bottom: 20px;
+            transition: transform 0.3s ease;
         }
         .tagline {
             font-size: 20px;
@@ -40,6 +40,14 @@
         .subtitle {
             font-size: 16px;
             color: #666;
+        }
+        .title {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+            z-index: 9999;
         }
         .footer-text {
             position: absolute;
@@ -63,6 +71,7 @@
     </style>
 </head>
 <body>
+    <h1 class="title">CocoColor &amp; CocoCrew</h1>
     <a href="./cococolor.ccc-ivory.com/" class="half left">
         <img class="logo" src="cococolor.ccc-ivory.com/assets/img/common/logo.png" alt="CocoColor">
         <p class="tagline">音でひらく、はじめてのここち</p>
