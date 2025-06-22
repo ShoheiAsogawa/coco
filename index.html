@@ -30,6 +30,14 @@
             font-size: 16px;
             color: #666;
         }
+        .footer-text {
+            font-size: 13px;
+            color: #999;
+            letter-spacing: 1px;
+            background-color: #fdf8f3;
+            padding: 15px 20px;
+            display: none;
+        }
         .split {
             display: flex;
             flex: 1;
@@ -74,7 +82,7 @@
             color: #666;
             transition: transform 0.4s ease;
         }
-        .footer-text {
+        .footer-text-desktop {
             position: absolute;
             bottom: 20px;
             width: 100%;
@@ -87,12 +95,17 @@
                 flex-direction: column;
                 height: auto;
             }
+            .footer-text {
+                display: block;
+            }
+            .footer-text-desktop {
+                display: none;
+            }
             .split { flex-direction: column; }
             .half.left { border-right: none; border-bottom: none; }
             .half { min-height: 50vh; }
             .logo { width: 56%; }
             .header-title { font-size: 32px; }
-            .footer-text { font-size: 11px; bottom: 10px; }
         }
     </style>
 </head>
@@ -101,18 +114,19 @@
         <h1 class="header-title">CocoColor & CocoCrew</h1>
         <p class="header-sub">子供達の得意を伸ばし、未来を彩れる場所でありたい。</p>
     </header>
+    <p class="footer-text">ロゴをタップすると公式サイトへ遷移します。</p>
     <div class="split">
-    <a href="./cococolor.ccc-ivory.com/" class="half left">
+    <a href="./cococolor.ccc-ivory.com/index.html" class="half left">
         <img class="logo" src="cococolor.ccc-ivory.com/assets/img/common/logo.png" alt="CocoColor">
-        <p class="tagline">音でひらく、はじめてのここち</p>
+        <p class="tagline">音でひらく、はじめてのこころ</p>
         <p class="subtitle">音楽療育のココカラー</p>
     </a>
-    <a href="./cococrew.ccc-ivory.com/" class="half right">
+    <a href="./cococrew.ccc-ivory.com/index.html" class="half right">
         <img class="logo" src="cococrew.ccc-ivory.com/assets/img/common/logo.png" alt="CocoCrew">
         <p class="tagline">手を動かせば創造は形になる</p>
         <p class="subtitle">創造と工作のココクルー</p>
     </a>
     </div>
-    <p class="footer-text">ロゴをタップすると公式サイトへ遷移します。</p>
+    <p class="footer-text-desktop">ロゴをタップすると公式サイトへ遷移します。</p>
 </body>
 </html>
