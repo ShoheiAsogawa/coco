@@ -4,135 +4,160 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CocoColor &amp; CocoCrew</title>
-
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body{
+        body {
             font-family: 'Noto Sans JP', sans-serif;
-            display:flex;
-            flex-direction:column;
-            min-height:100vh;
-            text-align:center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-align: center;
+            margin: 0;
         }
-
-        /* ──────────  ヘッダー  ────────── */
-        .header{background:#fdf8f3;padding:30px 20px;}
-        .header-title{font-size:36px;color:#333;font-weight:bold;position:relative;z-index:10;}
-
-        .header-sub{margin-top:15px;font-size:16px;color:#666;}
-        .header-sub-mobile{display:none;margin-top:15px;font-size:16px;color:#666;line-height:1.5;}
-
-        /* ──────────  画面分割  ────────── */
-        .split{display:flex;flex:1;}
-
-        .half{
-            flex:1;
-            display:flex;
-            flex-direction:column;
-            align-items:center;
-            justify-content:center;
-            background:#fdf8f3;
-            text-decoration:none;
-            color:#333;
-            transition:background 0.3s ease;
+        .header {
+            background-color: #fdf8f3;
+            padding: 30px 20px;
         }
-        .half.left{border-right:none;}
-
+        .header-title {
+            font-size: 36px;
+            color: #333;
+            font-weight: bold;
+            position: relative;
+            z-index: 10;
+        }
+        .header-sub {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #666;
+        }
+        .header-sub-mobile {
+            display: none;
+            margin-top: 15px;
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+        }
+        .footer-text {
+            font-size: 13px;
+            color: #999;
+            letter-spacing: 1px;
+            background-color: #fdf8f3;
+            padding: 24px 20px 15px 20px;
+            display: none;
+        }
+        .split {
+            display: flex;
+            flex: 1;
+            position: relative;
+        }
+       
+        .half {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #333;
+            background-color: #fdf8f3;
+        }
+        .half.left { border-right: none; }
+        .half:hover {
+            background-color: #fdf8f3;
+            transform: none;
+        }
         .half:hover .logo,
         .half:hover .tagline,
-        .half:hover .subtitle{
-            transform:translateY(-10px);
+        .half:hover .subtitle { 
+            transform: translateY(-10px); 
         }
-
-        /* ──────────  コンテンツ  ────────── */
-        .logo{
-            width:48%;
-            max-width:240px;
-            aspect-ratio:2/1;      /* 追加：先に高さを確保してCLS防止 */
-            height:auto;
-            margin-bottom:20px;
-            transition:transform 0.4s ease;
+        
+        .logo {
+            width: 48%;
+            max-width: 240px;
+            height: auto;
+            margin-bottom: 20px;
+            transition: transform 0.4s ease;
         }
-
-        .tagline{font-size:20px;margin-bottom:10px;transition:transform 0.4s ease;}
-        .subtitle{font-size:16px;color:#666;transition:transform 0.4s ease;}
-
-        /* ──────────  フッター  ────────── */
-        .footer-text-desktop{
-            position:absolute;
-            bottom:20px;
-            width:100%;
-            font-size:13px;
-            color:#999;
-            letter-spacing:1px;
+        .tagline {
+            font-size: 20px;
+            margin-bottom: 10px;
+            transition: transform 0.4s ease;
         }
-        .footer-text{
-            font-size:13px;
-            color:#999;
-            letter-spacing:1px;
-            background:#fdf8f3;
-            padding:24px 20px 15px;
-            display:none;
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+            transition: transform 0.4s ease;
         }
-
-        /* ──────────  モバイル  ────────── */
-        @media(max-width:768px){
-            body{flex-direction:column;height:auto;}
-
-            .header-title{font-size:32px;}
-            .header-sub{display:none;}
-            .header-sub-mobile{display:block;}
-
-            .split{flex-direction:column;}
-            .half{min-height:50vh;}
+        .footer-text-desktop {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            font-size: 13px;
+            color: #999;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                height: auto;
+            }
+            .header-sub {
+                display: none;
+            }
+            .header-sub-mobile {
+                display: block;
+            }
+            .footer-text {
+                display: block;
+            }
+            .footer-text-desktop {
+                display: none;
+            }
+            .split { flex-direction: column; }
+            .half.left { border-right: none; border-bottom: none; }
+            .half { min-height: 50vh; }
             .half:hover .logo,
             .half:hover .tagline,
-            .half:hover .subtitle{transform:none;}
-
-            .logo{width:56%;transition:none;}
-            .tagline,.subtitle{transition:none;}
-
-            .footer-text{display:block;}
-            .footer-text-desktop{display:none;}
+            .half:hover .subtitle { 
+                transform: none;
+            }
+            .logo { 
+                width: 56%;
+                transition: none;
+            }
+            .tagline {
+                transition: none;
+            }
+            .subtitle {
+                transition: none;
+            }
+            .header-title { font-size: 32px; }
         }
     </style>
 </head>
 <body>
     <header class="header">
-        <h1 class="header-title">CocoColor &amp; CocoCrew</h1>
+        <h1 class="header-title">CocoColor & CocoCrew</h1>
         <p class="header-sub">子供達の得意を伸ばし、未来を彩れる場所でありたい。</p>
-
         <div class="header-sub-mobile">
             <div>子供達の得意を伸ばし</div>
-            <div style="margin-top:8px;">未来を彩れる場所でありたい。</div>
+            <div style="margin-top: 8px;">未来を彩れる場所でありたい。</div>
         </div>
     </header>
-
     <p class="footer-text">ロゴをタップすると公式サイトへ遷移します。</p>
-
     <div class="split">
-        <!-- CocoColor -->
-        <a href="./cococolor.ccc-ivory.com/index.html" class="half left">
-            <img  class="logo"
-                  src="cococolor.ccc-ivory.com/assets/img/common/logo.png"
-                  alt="CocoColor"
-                  width="480" height="240" loading="eager">
-            <p class="tagline">音でひらく、はじめてのこころ</p>
-            <p class="subtitle">音楽療育のココカラー</p>
-        </a>
-
-        <!-- CocoCrew -->
-        <a href="./cococrew.ccc-ivory.com/index.html" class="half right">
-            <img  class="logo"
-                  src="cococrew.ccc-ivory.com/assets/img/common/logo.png"
-                  alt="CocoCrew"
-                  width="480" height="240" loading="eager">
-            <p class="tagline">手を動かせば創造は形になる</p>
-            <p class="subtitle">創造と工作のココクルー</p>
-        </a>
+    <a href="./cococolor.ccc-ivory.com/index.html" class="half left">
+        <img class="logo" src="cococolor.ccc-ivory.com/assets/img/common/logo.png" alt="CocoColor">
+        <p class="tagline">音でひらく、はじめてのこころ</p>
+        <p class="subtitle">音楽療育のココカラー</p>
+    </a>
+    <a href="./cococrew.ccc-ivory.com/index.html" class="half right">
+        <img class="logo" src="cococrew.ccc-ivory.com/assets/img/common/logo.png" alt="CocoCrew">
+        <p class="tagline">手を動かせば創造は形になる</p>
+        <p class="subtitle">創造と工作のココクルー</p>
+    </a>
     </div>
-
     <p class="footer-text-desktop">ロゴをタップすると公式サイトへ遷移します。</p>
 </body>
 </html>
