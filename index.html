@@ -30,12 +30,19 @@
             font-size: 16px;
             color: #666;
         }
+        .header-sub-mobile {
+            display: none;
+            margin-top: 15px;
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+        }
         .footer-text {
             font-size: 13px;
             color: #999;
             letter-spacing: 1px;
             background-color: #fdf8f3;
-            padding: 15px 20px;
+            padding: 24px 20px 15px 20px;
             display: none;
         }
         .split {
@@ -95,6 +102,12 @@
                 flex-direction: column;
                 height: auto;
             }
+            .header-sub {
+                display: none;
+            }
+            .header-sub-mobile {
+                display: block;
+            }
             .footer-text {
                 display: block;
             }
@@ -104,7 +117,21 @@
             .split { flex-direction: column; }
             .half.left { border-right: none; border-bottom: none; }
             .half { min-height: 50vh; }
-            .logo { width: 56%; }
+            .half:hover .logo,
+            .half:hover .tagline,
+            .half:hover .subtitle { 
+                transform: none;
+            }
+            .logo { 
+                width: 56%;
+                transition: none;
+            }
+            .tagline {
+                transition: none;
+            }
+            .subtitle {
+                transition: none;
+            }
             .header-title { font-size: 32px; }
         }
     </style>
@@ -113,6 +140,10 @@
     <header class="header">
         <h1 class="header-title">CocoColor & CocoCrew</h1>
         <p class="header-sub">子供達の得意を伸ばし、未来を彩れる場所でありたい。</p>
+        <div class="header-sub-mobile">
+            <div>子供達の得意を伸ばし</div>
+            <div style="margin-top: 8px;">未来を彩れる場所でありたい。</div>
+        </div>
     </header>
     <p class="footer-text">ロゴをタップすると公式サイトへ遷移します。</p>
     <div class="split">
