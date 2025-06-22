@@ -14,7 +14,6 @@
             text-align: center;
             margin: 0;
         }
-
         .header {
             background-color: #fdf8f3;
             padding: 30px 20px;
@@ -23,17 +22,14 @@
             font-size: 36px;
             color: #333;
             font-weight: bold;
-
             position: relative;
             z-index: 10;
-
         }
         .header-sub {
             margin-top: 15px;
             font-size: 16px;
             color: #666;
         }
-
         .split {
             display: flex;
             flex: 1;
@@ -55,30 +51,28 @@
             background-color: #fdf8f3;
             transform: none;
         }
-
         .half:hover .logo,
         .half:hover .tagline,
-        .half:hover .subtitle { transform: translateY(-10px); }
-
-        .half:hover .logo { transform: translateY(-10px); }
-main
+        .half:hover .subtitle { 
+            transform: translateY(-10px); 
+        }
+        
         .logo {
-            width: 60%;
-            max-width: 300px;
+            width: 48%;
+            max-width: 240px;
             height: auto;
             margin-bottom: 20px;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease;
         }
         .tagline {
             font-size: 20px;
             margin-bottom: 10px;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease;
         }
-        .half:hover .tagline { transform: translateY(-10px); }
         .subtitle {
             font-size: 16px;
             color: #666;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease;
         }
         .footer-text {
             position: absolute;
@@ -93,11 +87,10 @@ main
                 flex-direction: column;
                 height: auto;
             }
-
             .split { flex-direction: column; }
             .half.left { border-right: none; border-bottom: none; }
             .half { min-height: 50vh; }
-            .logo { width: 70%; }
+            .logo { width: 56%; }
             .header-title { font-size: 32px; }
             .footer-text { font-size: 11px; bottom: 10px; }
         }
@@ -106,9 +99,7 @@ main
 <body>
     <header class="header">
         <h1 class="header-title">CocoColor & CocoCrew</h1>
-
         <p class="header-sub">子供達の得意を伸ばし、未来を彩れる場所でありたい。</p>
-
     </header>
     <div class="split">
     <a href="./cococolor.ccc-ivory.com/" class="half left">
